@@ -110,6 +110,39 @@
         }
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {
+            "value": "\n```python\nimport django.urls\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {
+            "value": "\n```python\nimport django.urls\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {
+            "value": "\n```python\nimport django.urls\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -117,6 +150,28 @@
         "detail": "django.shortcuts",
         "documentation": {
             "value": "\n```python\nimport django.shortcuts\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {
+            "value": "\n```python\nimport rest_framework.views\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {
+            "value": "\n```python\nimport rest_framework.response\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -151,28 +206,6 @@
         "detail": "pathlib",
         "documentation": {
             "value": "\n```python\nimport pathlib\n```\n",
-            "supportThemeIcons": false
-        }
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {
-            "value": "\n```python\nimport django.urls\n```\n",
-            "supportThemeIcons": false
-        }
-    },
-    {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {
-            "value": "\n```python\nimport django.urls\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -263,10 +296,10 @@
         "kind": 6,
         "importPath": "ecommerce.api_webapp.models",
         "description": "ecommerce.api_webapp.models",
-        "peekOfCode": "class UserProfileManager(BaseUserManager):\n    \"\"\" Manager User similar \"\"\"\n    def create_user(self,email ,name ,password=None):\n        pass\n        if not email :\n            raise ValueError(\"Input email please\")\n        email = self.normalize_email('email')\n        user = self.model(email=email ,name=name)\n        user.set_password(password)\n        user.save(using =self._db)",
+        "peekOfCode": "class UserProfileManager(BaseUserManager):\n    \"\"\" Manager User similar \"\"\"\n    def create_user(self,email ,name ,password=None):\n        pass\n        if not email :\n            raise ValueError(\"Input email please\")\n        email = self.normalize_email(email)\n        user = self.model(email=email ,name=name)\n        user.set_password(password)\n        user.save(using =self._db)",
         "detail": "ecommerce.api_webapp.models",
         "documentation": {
-            "value": "\n```python\nfrom ecommerce.api_webapp.models import UserProfileManager\n```\n\n```python\n\n\n```\n\n```python\nclass UserProfileManager(BaseUserManager):\n    \"\"\" Manager User similar \"\"\"\n    def create_user(self,email ,name ,password=None):\n        pass\n        if not email :\n            raise ValueError(\"Input email please\")\n        email = self.normalize_email('email')\n        user = self.model(email=email ,name=name)\n        user.set_password(password)\n        user.save(using =self._db)\n```\n",
+            "value": "\n```python\nfrom ecommerce.api_webapp.models import UserProfileManager\n```\n\n```python\n\n\n```\n\n```python\nclass UserProfileManager(BaseUserManager):\n    \"\"\" Manager User similar \"\"\"\n    def create_user(self,email ,name ,password=None):\n        pass\n        if not email :\n            raise ValueError(\"Input email please\")\n        email = self.normalize_email(email)\n        user = self.model(email=email ,name=name)\n        user.set_password(password)\n        user.save(using =self._db)\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -279,6 +312,18 @@
         "detail": "ecommerce.api_webapp.models",
         "documentation": {
             "value": "\n```python\nfrom ecommerce.api_webapp.models import UserProfile\n```\n\n```python\n\n\n```\n\n```python\nclass UserProfile(AbstractBaseUser,PermissionsMixin):\n    email =models.EmailField(blank =True ,max_length=250,unique =True)\n    name =models.CharField(max_length=200,null =True)\n    is_active =models.BooleanField(default =True)\n    is_staff =models.BooleanField(default =False)\n    objects = UserProfileManager()\n    USERNAME_FIELD = 'email'\n    REQUIRED_FIELDS =['name']\n    def __str__(self):\n        return self.email\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
+        "label": "TestingAPI",
+        "kind": 6,
+        "importPath": "ecommerce.api_webapp.views",
+        "description": "ecommerce.api_webapp.views",
+        "peekOfCode": "class TestingAPI(APIView):\n    def get(self ,request, format =None):\n        an_apiview =[\n        ]\n        return Response({'apiview': \"Hello!\",'an_apiview' :an_apiview})",
+        "detail": "ecommerce.api_webapp.views",
+        "documentation": {
+            "value": "\n```python\nfrom ecommerce.api_webapp.views import TestingAPI\n```\n\n```python\n\n\n```\n\n```python\nclass TestingAPI(APIView):\n    def get(self ,request, format =None):\n        an_apiview =[\n        ]\n        return Response({'apiview': \"Hello!\",'an_apiview' :an_apiview})\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -479,10 +524,10 @@
         "kind": 5,
         "importPath": "ecommerce.ecommerce.settings",
         "description": "ecommerce.ecommerce.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.SessionAuthentication',",
         "detail": "ecommerce.ecommerce.settings",
         "documentation": {
-            "value": "\n```python\nfrom ecommerce.ecommerce.settings import USE_TZ\n```\n\n```python\n\n\n```\n\n```python\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',\n```\n",
+            "value": "\n```python\nfrom ecommerce.ecommerce.settings import USE_TZ\n```\n\n```python\n\n\n```\n\n```python\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.1/howto/static-files/\nSTATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.SessionAuthentication',\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -491,10 +536,10 @@
         "kind": 5,
         "importPath": "ecommerce.ecommerce.settings",
         "description": "ecommerce.ecommerce.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),",
+        "peekOfCode": "STATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n}",
         "detail": "ecommerce.ecommerce.settings",
         "documentation": {
-            "value": "\n```python\nfrom ecommerce.ecommerce.settings import STATIC_URL\n```\n\n```python\n\n\n```\n\n```python\nSTATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n```\n",
+            "value": "\n```python\nfrom ecommerce.ecommerce.settings import STATIC_URL\n```\n\n```python\n\n\n```\n\n```python\nSTATIC_URL = '/static/'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n}\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -503,10 +548,10 @@
         "kind": 5,
         "importPath": "ecommerce.ecommerce.settings",
         "description": "ecommerce.ecommerce.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n}",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n}\nAUTH_USER_MODEL ='api_webapp.UserProfile'",
         "detail": "ecommerce.ecommerce.settings",
         "documentation": {
-            "value": "\n```python\nfrom ecommerce.ecommerce.settings import REST_FRAMEWORK\n```\n\n```python\n\n\n```\n\n```python\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n}\n```\n",
+            "value": "\n```python\nfrom ecommerce.ecommerce.settings import REST_FRAMEWORK\n```\n\n```python\n\n\n```\n\n```python\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': (\n        'rest_framework.permissions.IsAuthenticated',\n    ),\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework.authentication.SessionAuthentication',\n        'rest_framework.authentication.BasicAuthentication',\n    ),\n}\nAUTH_USER_MODEL ='api_webapp.UserProfile'\n```\n",
             "supportThemeIcons": false
         }
     },
@@ -515,10 +560,10 @@
         "kind": 5,
         "importPath": "ecommerce.ecommerce.urls",
         "description": "ecommerce.ecommerce.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api-auth/', include('rest_framework.urls'))\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api-auth/', include('rest_framework.urls')),\n    path('', include('api_webapp.urls')),\n]",
         "detail": "ecommerce.ecommerce.urls",
         "documentation": {
-            "value": "\n```python\nfrom ecommerce.ecommerce.urls import urlpatterns\n```\n\n```python\n\n\n```\n\n```python\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api-auth/', include('rest_framework.urls'))\n]\n```\n",
+            "value": "\n```python\nfrom ecommerce.ecommerce.urls import urlpatterns\n```\n\n```python\n\n\n```\n\n```python\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api-auth/', include('rest_framework.urls')),\n    path('', include('api_webapp.urls')),\n]\n```\n",
             "supportThemeIcons": false
         }
     },
